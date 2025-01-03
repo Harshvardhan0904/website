@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Give+You+Glory&family=Leckerli+One&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for consistent spacing */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #000;
+ /* Default background color for uniformity */
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Smaller font on smaller devices */
+    }
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    padding: 20px 5%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: black;
+    padding: 10px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    font-size: 32px;
+    color: black;
+    background-color: white;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+.active{
+    background-color: rgb(47, 234, 255);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border-radius: 5px;
+
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: black;
+    background-color: white;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 0;
+    position: fixed;
+    top: 0; /* Aligns sidebar to the top of the viewport */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.857);
+    backdrop-filter: blur(10px);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 80px; /* Ensures spacing for the navbar */
+    z-index: 1100; /* Sidebar should appear above the navbar */
+  }
+  
+
+.sidebar a {
+    padding: 10px 15px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    display: block;
+    margin: 15px;
+    transition: 0.3s;
+}
+
+.sidebar  a:hover {
+    background-color: rgb(47, 234, 255);
+    color: black;
+    border-radius: 5px;
+}
+
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    font-size: 36px;
+    border-radius: 25px;
+}
+
+.sidebar h1 {
+    color: #ffffff;
+    margin-left: 50px;
+
+}
+
+/* Section Styling */
+.s {
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    background: linear-gradient(to right ,#36d1d9 25%,blue);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 100vh;
+}
+.s h2 {
+    font-size: 3em;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 12px 0px 30px rgb(0, 149, 255);
+    border-radius: 15px;
+    margin-bottom: 10px;
+    
+}
+
+form {
+    width: 100%;
+    background-image: url("static/images/felid.jpg");
+    z-index: inherit;
+    background-color: #000;
+    padding: 50px;
+    border-radius: 20px;
+    gap: 10px;
+    z-index: 10;
+    box-shadow: 5px 5px 40px 7px rgb(0, 0, 0);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.c2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c2 span {
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-bottom: 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+}
+
+.c2 input {
+    width: 70%;
+    height: 10vh;
+    padding: 10px;
+    border: 0.5px dashed #fff;
+    border-radius: 14px;
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: 100;
+    font-family: 'Montserrat', Courier, monospace;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.c2 input:focus {
+    outline: none;
+    box-shadow: 0 0 40px 5px rgba(0, 195, 255, 0.5);
+}
+
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    font-family: 'Montserrat';
+    background-color: black;
+    color: white;
+    width: 10%;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: 5%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.2);
+    box-shadow: 0 0 40px 5px rgba(0, 195, 255, 0.5);
+}
+
+.res , .error{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(43, 255, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    text-shadow: 3px 3px 25px  rgb(0, 255, 204);
+    box-shadow: 0 0 40px  rgba(0, 0, 0, 0.5);
+}
