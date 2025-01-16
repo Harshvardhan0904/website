@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/crop.css">
+    <title>CropYeild Detection</title>
+</head>
+
+<body>
+
+        
+    </div>
+    <div id="mySidebar" class="sidebar">
+        <h1 class="Projects">PROJECTS</h1>
+        <div class="closebtn"><span p href="javascript:void(0)" class="icon" onclick="closeNav()">&#8594;</span>
+        </div>
+        <a href="/crop">1. Crop Yeild Detection</a>
+        <a href="/disease">2. AI DOC</a>
+        <a href="/movie2">3. Movie Recommendation</a>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <h1><a href="/">Predict.io</a></h1>
+        </div>
+        <div class="nav2">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="javascript:void(0);" id="servicesLink">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="s">
+        <h2 class="heading">CROP YEILD DETECTION</h2>
+        <form onsubmit="return valid();" action="/predict" method="POST" id="_form">
+            <div class="container">
+                <div class="c2">
+                    <span>Crop Name</span>
+                    <input type="text" placeholder="Enter Crop Name" name="crop_name" list="cropOptions">
+                    <datalist id="cropOptions">
+                        <option value="Maize">
+                        <option value="Potatoes">
+                        <option value="Rice, paddy">
+                        <option value="Sorghum">
+                        <option value="Soybean">
+                        <option value="Wheat">
+                        <option value="Cassava">
+                        <option value="Sweet potatoes">
+                        <option value="Plantains and others">
+                        <option value="Yams">
+                    </datalist>
+                </div>
+                <div class="c2">
+                    <span>Country Name</span>
+                    <input type="text" placeholder="Enter Country Name" name="country_name" list="countryOptions">
+                    <datalist id="countryOptions"></datalist>
+                </div>
+                <div class="c2">
+                    <span>Avg. Temp</span>
+                    <input type="number" placeholder=" Enter Avg. Temp" step="0.1" name="temp">
+                </div>
+                <div class="c2">
+                    <span>Pesticides (tons)</span>
+                    <input type="number" placeholder=" Enter Pesticides used (tons)" step="0.1" name="tons">
+                </div>
+                <div class="c2">
+                    <span>Avg Rainfall per Year (mm)</span>
+                    <input type="number" placeholder="Enter Rainfall per year (mm)" step="0.1" name="rain">
+                </div>
+                <div class="c2">
+                    <span>Year</span>
+                    <input type="number" placeholder="Enter Year" name="year">
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit" class="submit">Predict</button>
+            </div >
+            {% if error %}
+            <div class="error"  style="color: red;">{{ error }} </div>
+            {% endif %}
+
+            <div class="res">
+                {% if pred_value %}
+                <h1>Predicted Yield (hg/ha) : {{ pred_value[0] }}</h1>
+                {% endif %}
+            </div>
+        </form>
+
+
+    </section>
+    <script>
+
+        function valid() {
+            var crop = document.getElementsByName("crop_name")[0].value;
+            var country = document.getElementsByName("country_name")[0].value;
+            var rain = document.getElementsByName("rain")[0].value;
+            var temp = document.getElementsByName("temp")[0].value; // Corrected name
+            var year = document.getElementsByName("year")[0].value;
+            var pesti = document.getElementsByName("tons")[0].value;
+
+            if (crop === "" || country === "" || rain === "" || temp === "" || year === "" || pesti === "") {
+                alert("All fields are mandatory");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    </script>
+    <script src="static/crop.js"></script>
+
+    
+
+
+</body>
+
+</html>

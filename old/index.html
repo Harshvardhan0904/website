@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">Predict.io</a>
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="javascript:void(0);" id="servicesLink">Services</a>
+      <a href="#about">Contact Us</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <h1 class="Projects">Projects</h1>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/crop">1.Crop Yeild Detection</a>
+    <a href="/disease">2.AI DOC</a>
+    <a href="/movie2">3. Movie Recommendation</a>
+   
+  </div>
+  <!--mai box-->
+  <div class="box1">
+    <div class="left">
+      <div class="name">
+        <h1><span>It's</span> Harsh,</h1>
+      </div>
+
+      <div class="des">
+        <p><span class="pass">Im a Passionate</span>
+          <span id="element"></span>
+        </p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="image-circle">
+        <img src="static/poster.jpg" alt="Circular Image">
+      </div>
+      <div class="context">
+        Im into <span>Mechine Learning , AI</span> and <span>Data analyis.</span>
+        I am open to work with anyone who is related to this feild and do some contribution to the community
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/harsh-vardhan-tiwari-05153b302/" target="_blank">
+        <img src="static/linkedin.png" alt="LinkedIn" class="social-icon">
+      </a>
+      <a href="https://github.com/Harshvardhan0904/" target="_blank">
+        <img src="static/github.png" alt="GitHub" class="social-icon">
+      </a>
+      <a href="" target="_blank">
+        <img src="static/twitter.png" alt="Twitter" class="social-icon">
+      </a>
+    </div>
+  </div>
+
+  <div class="box2">
+    <h1>Projects on GitHub</h1>
+    <div class="boxes-container">
+      <div class="p1">
+        <div class="ppe">PPEKIT</div>
+        <div class="ppe_des">In this i created an PPE(personal protecttive equipment) kit detection system for a company
+          , i completed this task using computer vision and ML model such as yolo
+          hence , the system detects if the person is wearing PPE kit or not if not the data is update in excel sheet i
+          thought of adding Face detection but the model was not working quite well hence at
+          last i have to drop that idea
+        </div>
+        <button class="btn"><a href="https://github.com/Harshvardhan0904/PPE_PROJECT"> see</a></button>
+      </div>
+      <div class="p2">
+        <div class="stair">STAIRCASE</div>
+        <div class="stair_des">In this project i was supposed to develope a model where its will detect the person is
+          using staircase hand-railing or not cause this was
+          one of the safety measure that every worker has to follow there since i may cause harzard accidents hence i
+          developed this model
+        </div>
+        <button class="btn"><a href="https://github.com/Harshvardhan0904/Staircase-Handrailing">see</a></button>
+      </div>
+      <div class="p3">
+        <div class="anpr">ANPR</div>
+        <div class="anpr_des">This was developed for my college but it didnt got implemented :( here i develope a model
+          to detect number plate of
+          unknown vehicale entering our college since facultiy in my college used to have an id so if any unkonwn
+          vehicle enter my college i was supposed
+          to update the numberplate in my excel sheet which was furrther supposed to be seen by my college staffs
+        </div>
+        <button class="btn"><a href=""> see</a></button>
+      </div>
+    </div>
+  </div>
+
+  <section class="parallax">
+    <img src="static/images/mountain.png" id="mount">
+    <h2 id="text">EXPLORE MORE</h2>
+    <img src="static/images/trees.png" id="trees">
+    <div class="animation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </section>
+  <div class="about" id="about">
+    <div class="left">
+        <h1>About Me</h1>
+        <p>
+            Welcome! I'm a passionate developer with experiance in Mechine Learning, Deep Learning, 
+            Data analysis and project deployment. I enjoy solving real-world problems with innovative solutions.
+        </p>
+        <p>
+            Explore my resume and projects to learn more about my journey and skillset. Feel free to reach out for collaboration!
+        </p>
+    </div>
+    <div class="right">
+        <div class="cards">
+            <h3>Resume & Contact</h3>
+            <div class="rcontent">
+                <p>
+                    Download my resume to explore my professional experience, 
+                    or get in touch with me for opportunities and collaboration.
+                </p>
+                <div class="button-container">
+                    <button onclick="downloadResume()">Download Resume</button>
+                    <button onclick="contactMe()">Contact Me</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+  
+  <script src="static/main.js"></script>
+
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['<i>Video Editor</i>.', 'Data Analyist', 'AI/ML Enthusiast'],
+      typeSpeed: 90,
+      loop: true
+    });
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/dis.css">
+    <title>AI DOC</title>
+</head>
+
+<body>
+    <div id="main">
+        <canvas id="dots"></canvas>
+        <div id="mySidebar" class="sidebar">
+            <h1 class="Projects">PROJECTS</h1>
+            <div class="closebtn"><span p href="javascript:void(0)" class="icon" onclick="closeNav()">&#8594;</span>
+            </div>
+            <a href="/crop">1. Crop Yeild Detection</a>
+            <a href="/disease">2. AI DOC</a>
+            <a href="/movie2">3. Movie Recommendation</a>
+        </div>
+
+        <nav>
+            <div class="logo">
+                <h1><a href="/">Predict.io</a></h1>
+            </div>
+            <div class="nav2">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="javascript:void(0);" id="servicesLink">Services</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page1">
+            <div class="page1-top">
+                <div class="heading">
+                    <h1>YOUR AI DOC IS HERE !</h1>
+                </div>
+                <div class="explain">
+                    <h3>Enter any <span>Three</span> problems from the list and it will tell what probelm you have also
+                        suggest what <span>diet , workout , precaution</span> you should take. </h3>
+                </div>
+
+            </div>
+            <div class="inputs">
+                <form onsubmit="return valid();" action="/disease" method="POST" id="disease_form">
+                    <div class="symp">
+                        <div class="top">
+                            <h1>Enter Your Problems</h1>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Enter Symptom 1" name="symp1" list="SymptompOP1">
+                            <datalist id="SymptompOP1"></datalist>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Enter Symptom 2" name="symp2" list="SymptompOP2">
+                            <datalist id="SymptompOP2"></datalist>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Enter Symptom 3" name="symp3" list="SymptompOP3">
+                            <datalist id="SymptompOP3"></datalist>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="submit" id="submit">Predict</button>
+                    {% if error %}
+                    <div class="error" style="color: red;">{{ error }} </div>
+                    {% endif %}
+
+                    {% if pred_disease %}
+                    <h1 class="restxt">You might have : <span style="color: gold; font-weight: bold;">{{ pred_disease
+                            }}</span></h1>
+                    {% else %}
+                    <h1 class="restxt">NOT A VALID SYMPTOM</h1>
+                    {% endif %}
+                </form>
+                
+            </div>
+
+            <div class="resbox"  >
+               
+                {% if pred_disease %}
+                <div class="desc" id="desc"data-tilt>
+                    <h3>Description</h3>
+                    <div>
+                        <p>{{ desc }}</p>
+                    </div>
+                </div>
+                
+                <div class="pre" data-tilt>
+                    <h3>Precautions:</h3>
+                    <div>
+                        <ul>
+                            {% for precaution_item in precaution %}
+                                <li>{{ precaution_item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="diet"data-tilt>
+                    <h3>Diet:</h3>
+                    <div>
+                        <ul>
+                            {% for workout_item in workout %}
+                                <li>{{ workout_item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="med" data-tilt  data-tilt-max="5" >
+                    <h3>Medication:</h3>
+                    <div>
+                        <ul>
+                            {% for medicine in med %}
+                                <li>{{ medicine }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+                
+            </div>
+            {%if pred_disease%}
+            <div class="pdf">
+                <button id="pdf">Download PDF</button>
+            </div>
+            {%endif%}
+            
+        </div>
+    </div>
+    <script src="static/dis.js"></script>
+    <script src="static/tilt.js"></script>
+
+</body>
+
+</html>

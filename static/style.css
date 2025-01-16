@@ -1,0 +1,928 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Arbutus&family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Fontdiner+Swanky&family=Girassol&family=Give+You+Glory&family=Goldman:wght@400;700&family=Leckerli+One&family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Vinyl&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Uncial+Antiqua&family=Zen+Dots&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    
+
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+    font-family: "Bebas Neue";
+    background-color: rgb(205, 47, 47);
+    overflow: hidden;
+    
+}
+.sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 0;
+  position: fixed;
+  top: 0; /* Aligns sidebar to the top of the viewport */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.261);
+  backdrop-filter: blur(10px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 80px; /* Ensures spacing for the navbar */
+  z-index: 1100; /* Sidebar should appear above the navbar */
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+ 
+  margin: 15px;
+}
+
+.sidebar a:hover {
+  background-color: #ffffff;
+  color: black;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 3px;
+  margin-top: 30px;
+  right: 25px;
+  font-size: 36px;
+  border-radius: 25px;
+}
+.sidebar h1{
+  color: rgb(255, 255, 255);
+  margin-left: 50px;
+ 
+}
+#loader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    
+}
+#loader h1{
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 300;
+}
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    
+
+
+}
+
+#mouse {
+    height: 2vw;
+    width: 2vw;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 255, 166, 0.719);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+
+
+#page1 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+
+
+}
+
+#page1_content {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.logo {
+    margin-top: 30vw;
+   
+}
+#page1_content .logo span{
+   display: inline-block;
+   
+}
+   
+
+
+nav {
+    
+    position: fixed;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    height: 12vh;
+    padding: 2vw 10vw;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+
+
+}
+
+#nav2 {
+    margin-top: 15px;
+    display: flex;
+    gap: 5vw;
+    position: relative;
+    z-index: 10;
+
+}
+
+#nav2 h4 {
+    font-size: 1.4vw;
+    font-family: "Bebas Neue";
+
+    margin-bottom: 2.6vw;
+
+
+}
+
+#nav2 h5 {
+    margin-bottom: 1vw;
+    display: none;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+#nav2 h5 span {
+    font-family: "Poppins";
+    font-size: 0.8vw;
+    letter-spacing: -1vw;
+    font-weight: 300;
+    display: inline-block;
+    letter-spacing: 2px;
+    color: white;
+
+    transform: translateY(25px);
+}
+
+#nav2 h5 span:hover{
+    color: rgb(0, 255, 153);
+    cursor: pointer;
+}
+
+#nav2 a{
+    text-decoration: none;
+    color: white;
+}
+#nav2 a:hover{
+    color: rgb(0, 255, 153);
+}
+
+
+#nav-bottom {
+    width: 80%;
+    height: 0vh;
+    position: absolute;
+    top: 80%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(10, 10, 10, 0.423);
+    z-index: 9;
+    border-bottom: 2px solid rgb(0, 255, 153);
+    transition: 0.6s ease;
+}
+
+nav button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    background-color: rgb(0, 255, 153);
+    border-radius: 50px;
+    width: 10vw; /* Fixed width */
+    height: 2vw; /* Fixed height */
+    padding: 0; /* Remove padding to avoid layout shifts */
+    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+nav button h3 {
+    font-family: 'Bebas Neue';
+    font-size: 1.2vw;
+}
+
+nav button svg {
+    height: 1vw;
+    margin-left: 1vw;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1); /* Scale button without affecting layout */
+    background-color: rgba(255, 255, 255, 0); /* Slight transparency */
+}
+
+button:hover h3 {
+    background-color: rgb(0, 255, 153);
+    transform: translateX(-0.5vw);
+    padding: 5px;
+    border-radius: 50px;
+    font-size: 1vw;
+}
+
+button:hover svg {
+    transform: scale(1.2) rotate(135deg);
+    background-color: rgb(0, 255, 153);
+    padding: 5px;
+    border-radius: 50px; /* Scale and rotate SVG */
+}
+
+
+
+#page1_content h1 {
+    text-align: center;
+    font-family: "Give You Glory";
+    color: white;
+    font-size: 10vw;
+}
+
+#page2 {
+    background-color:wheat;
+    min-height: 100vh;
+    width: 100%;
+    
+}
+
+#page2-top {
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+/* #page2-top h2 {
+    text-align: center;
+    font-size: 5vw;
+    font-family: "Bebas Neue";
+    letter-spacing: -.5px;
+    font-weight: 100;
+    /* border-bottom: 2px solid black; */
+    /* margin-bottom: 5vw;
+    margin-top: 5vw; */
+/* } */ 
+
+#page2-top span {
+
+    font-size: 3vw;
+    font-family: "Bebas Neue";
+    letter-spacing: -.5px;
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+
+}
+.text{
+    margin-top: 3vw;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    box-shadow: 3px 5px 10px black;
+    background-color: #fff;
+}
+
+#image {
+    background-color: black;
+    height: 60vh;
+    width: 30%;
+    border-radius: 10px;
+    margin-top: 4vw;
+
+}
+
+#image img {
+    height: 60vh;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+   
+}
+
+.content {
+    display: flex;
+}
+
+#image {
+    width: 25%;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.419);
+    margin-left: 8vw ;
+}
+
+.text {
+    width: 50%;
+    padding: 3vw;
+    margin-left: 8vw ;
+
+}
+
+.text h3 {
+    font-family: "Montserrat";
+    font-size: 1.3vw;
+    font-weight: 400;
+    letter-spacing: -1px;
+    text-align: left;
+    opacity: 1;
+    transform: translateY(50px); /* Move the elements 50px down */
+    transition: all 0.5s ease;
+}
+#text1{
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 5px;
+}
+#page3{
+    background-color: black;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    position: relative;
+    padding: 3vw;
+}
+#page3-top{
+  
+    text-align: center;
+    
+}
+#page3-top h2{
+    font-size: 3vw;
+    font-weight: 100;
+    color: rgb(246, 246, 246);
+    padding: 2vw;
+    border-bottom: 2px solid rgb(179, 255, 0);
+
+}
+
+.skillbox{
+    margin-top: 4vw;
+    display: flex;
+    padding: 2vw;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+.skills{
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    background-color: rgba(15, 87, 255, 0.292);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 2vw;
+    flex-basis: 15%;
+    /* border: 0.2vw solid rgb(3, 108, 245); */
+    height: 12vw;
+    box-shadow: 3px 5px 10px rgba(135, 134, 134, 0.503);
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+
+} 
+.skills img{
+    height: 5vw;
+}
+.skills:hover{
+    transform: scale(1.1);
+}
+#page4{
+    background-color: rgb(241, 246, 133);
+    width: 100%;
+    min-height: 100vh;
+    padding: 2vw 3vw;
+    display: flex;
+    flex-direction: column;
+}
+#page4-top h1{
+    text-align: center;
+    border-bottom: 2px solid black;
+    margin-bottom: 2vw;
+    font-size:5vw;
+}
+#elements{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    height: 75vh;
+    width: 100%;
+    
+    padding: 2vw;
+}
+#elements .box {
+    height: 100%; /* Example fixed height */
+    width: 32%; /* Example width for multiple boxes in a row */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Styling for the video */
+#elements .box video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    z-index: 1; /* Below the text */
+}
+
+/* Styling for the image */
+#elements .box img {
+    height: 100%;
+    width: 100%;
+    filter: brightness(0);
+    position: absolute;
+    object-fit: cover;
+    z-index: 2; /* Above the video but below the text */
+    transition: all 0.3s ease;
+}
+
+/* Hide the image on hover */
+#elements .box:hover img {
+    opacity: 0;
+}
+
+/* Styling for the text */
+#elements .box .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3; /* Ensure text is above video and image */
+    color: white; /* Text color */
+    font-size: 2.5rem; /* Adjust font size */
+    font-family: "Bebas Neue";
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for readability */
+    text-align: center;
+    pointer-events: none; /* Ensure text doesn't interfere with mouse interactions */
+}
+#elements .box button{
+    z-index: 1000;
+    background-color: rgb(0, 255, 179);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 0.5vw;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#elements .box button:hover{
+    box-shadow: 0px 1px 10px rgb(0, 225, 255) ;
+}
+#elements .box button a{
+    color: black;
+    text-decoration: none;
+}
+#page4 p{
+    text-align: center;
+    font-size: 2vw;
+}
+
+.content4{
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    margin-left: 25vw;
+}
+#page5{
+    padding: 1vw 1vw;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+#dots{
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+#page5-top{
+    padding: 2vw 3vw;
+    text-align: center;
+    border-bottom: 2px solid rgb(255, 217, 0);
+    color: rgb(0, 0, 0);
+}
+#page5-top h1{
+    font-size: 4vw;
+}
+.swiper {
+    position: relative;
+    margin-top: 1vw;
+    width: 100%;
+    height: 50%;
+  }
+
+  .swiper-slide {
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+.ptext{
+    font-family: Poppins;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 50%;
+    font-weight:thin;
+    left: 40%;
+    text-shadow: 0px 5px 10px black;
+    font-size: 3vw;
+}
+#i1{
+    background-color: rgb(75, 75, 180);
+}
+#i2{
+    background-color: lightblue;
+}
+#i3{
+    background-color: lightblue;
+}
+#i4{
+    background-color: orange;
+}
+#i5{
+    background-color: orange;
+}
+#i6{
+   
+    background-color: #ffffff6e;
+}
+#i7{
+    background-color: rgb(255, 211, 122);
+}
+#i8{
+    background-color: rgb(75, 75, 180);
+}
+#i9{
+    background-color: rgb(226,255,127);
+}
+#i10{
+    background-color: rgb(75, 75, 180);
+}
+#i11{
+    background-color: rgb(235, 124, 83);
+}
+#i12{
+    background-color: rgb(75, 75, 180);
+}
+#i13{
+    background-color: rgba(255, 221, 0, 0.857);
+}
+#i14{
+    background-color: rgb(180, 61, 180);
+}
+#i15{
+    background-color: greenyellow;
+}
+.infinitebox{
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    height: 100px;
+    overflow: hidden;
+    background-color: rgb(4, 4, 4);
+}
+.infinitebox .title{
+    margin-bottom: 3vw;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    padding-left: 1vw ;
+    left: max(calc(200px*6),100%);
+    animation-name: scrollleft;    
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+.title h2{
+    color: white;
+    margin-top: 1vw;
+    font-size: 3vw;
+}
+@keyframes scrollleft {
+
+    to{
+        left: -200px;
+    }
+}
+
+.item1{
+    animation-delay: calc(10s/6*(6 - 1)*-1) ;
+}
+
+.item2{
+    animation-delay: calc(10s/6*(6 - 2)*-1);
+}
+
+.item3{
+    animation-delay: calc(10s/6*(6 - 3)*-1);
+}
+
+.item4{
+    animation-delay: calc(10s/6*(6 - 4)*-1);
+}
+
+.item5{
+    animation-delay: calc(10s/6*(6 - 5)*-1);
+}
+
+.item6{
+    animation-delay: calc(10s/6*(6 - 6)*-1);
+}
+.page5_content{
+    background-color: rgb(113, 113, 113);
+    color: white;
+    border-radius: 5px;
+    padding: 1vw 1vw;
+    margin-left: 20vw;
+    width: 60%;
+    margin-top: 2vw;
+    text-align: center;
+}
+.page5_content h2{
+    font-weight: 300;
+    font-family: 'Montserrat';
+}
+#page6 {
+    padding: 2vw;
+    display: flex;
+    background-color: rgb(36, 36, 36);
+    width: 100%;
+    flex-direction: column;
+    height: 100vh; /* This ensures the page stretches but allows scrolling */
+}
+
+.page6-top {
+    text-align: center;
+    margin-bottom: 1vw;
+    padding: 0vw 3vw;
+}
+
+.page6-top h1 {
+    font-size: 4vw;
+    color: white;
+    border-bottom: 2px solid rgb(255, 217, 0);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 50vh; /* Allows the content to expand naturally */
+    gap: 2vw;
+}
+
+.left {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(254, 234, 154);
+    justify-content: center;
+    padding: 1vw;
+    flex-direction: column;
+}
+
+.left h3 {
+    background-color: #f2f2f2;
+    font-size: 1.4vw;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    font-family: Bebas Neue;
+    font-weight: 300;
+    text-align: left;
+    text-align: justify;
+    padding: 1vw;
+    word-spacing: 3px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.423);
+}
+
+.resumecard {
+    width: 55%;
+    margin-left: 25%;
+    height: auto; /* Removed fixed height */
+    border-radius: 15px;
+    border: 2px solid rgb(252, 227, 34);
+    background-color: rgb(250, 206, 85);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.594);
+    padding: 0vw 2vw;
+}
+
+.resumecard .title {
+    color: rgb(0, 0, 0);
+    margin-bottom: -5%;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    font-family: "Bebas Neue";
+}
+
+.res_content {
+    font-size: 1.5vw;
+    border-radius: 10px;
+    padding: 1vw;
+    margin-top: 10%;
+    color: white;
+    background-color: rgb(37, 37, 37);
+    box-shadow: 0px 0px 10px rgb(90, 90, 90);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    height: auto;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+.buttons button {
+    box-shadow: 0px 0px 20px rgb(255, 145, 0);
+    width: 40%;
+    border: none;
+    border-radius: 15px;
+    height: 3vw;
+    background-color: rgb(41, 41, 41);
+    transition: 0.3s all ease;
+    color: white;
+}
+
+.right {
+    padding: 1vw 2vw;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(8, 255, 140, 0.867) 20%, rgb(69, 133, 99));
+    flex-direction: column; /* Allow vertical stacking */
+}
+
+.contact_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact {
+    justify-content: center;
+    gap: 20px;
+    padding: 2vw 3vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact h2 {
+    font-size: 4vw;
+    border-bottom: 2px solid black;
+    margin-bottom: 3%;
+}
+
+.contact input {
+    border-style: none;
+    border: 1px solid black;
+    height: 3vw;
+    border-radius: 10px;
+    padding: 1vw 1vw;
+    font-family: "Poppins";
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.212);
+    transition: 0.3s ease all;
+}
+
+.contact input:focus {
+    box-shadow: 0px 0px 10px rgba(255, 72, 0, 0.945);
+    transform: scale(1.05);
+}
+
+textarea {
+    height: 20%;
+    padding: 1vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.212);
+    resize: none;
+}
+
+form button {
+    box-shadow: 0px 0px 10px rgba(4, 216, 85, 0.894);
+    width: 20%;
+    border: none;
+    border-radius: 15px;
+    font-weight: 300;
+    height: 3vw;
+    background-color: rgb(0, 255, 132);
+    transition: 0.3s all ease;
+}
+
+form button:hover {
+    background-color: rgb(0, 255, 132);
+}
+
+.slider {
+    margin-top: 20px;
+    display: flex;
+    background-color: rgb(36, 36, 36);
+    width: 100%;
+    justify-content: space-around;
+}
+
+.slider .list {
+    display: flex;
+    gap: 40px;
+}
+
+.slider .list .img img {
+    background-color: #53d8f6;
+    padding: 1vw;
+    border-radius: 20px;
+    height: 4vw;
+    width: 4vw;
+    object-fit: contain;
+    transition: 0.3s ease all;
+}
+
+.slider .list .img img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease all;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .resumecard {
+        width: 90%;
+    }
+
+    .contact input, textarea, form button {
+        width: 100%;
+    }
+
+    .buttons button {
+        width: 45%;
+    }
+}

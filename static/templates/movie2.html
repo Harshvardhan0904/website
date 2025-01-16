@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommndation</title>
+    <link rel="stylesheet" href="static/movie2.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="mySidebar" class="sidebar">
+            <h1 class="Projects">PROJECTS</h1>
+            <div class="closebtn"><span p href="javascript:void(0)" class="icon" onclick="closeNav()">&#8594;</span></div>
+            <a href="/crop">1. Crop Yeild Detection</a>
+            <a href="/disease">2. AI DOC</a>
+            <a href="/movie2">3. Movie Recommendation</a>
+          </div>
+
+        <nav>
+            <div class="logo">
+                <h1><a href="/">Predict.io</a></h1>
+            </div>
+            <div class="nav2">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="javascript:void(0);" id="servicesLink">Services</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page1">
+            <div class="page1-top">
+                <div class="heading">
+                    <h1>Movie <br>Recomendation</h1>
+                </div>
+                <div class="context">
+                    Get Recomended movies just by selecting any movie of your choice and get 5 related movies
+                </div>
+            </div>
+            <div class="page1-main">
+                <form action="/movie2" method="POST" id="movie_form">
+                    <div class="input">
+                        <label for="">Select Movie</label>
+                        <div class="select-box">
+                            <select name="movie_name_input" id="movies">
+                                {% for i in movies %}
+                                <option value="{{ i }}">{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button>Press</button>
+                    </div>
+
+                </form>
+            </div>
+
+            {% if res %}
+            <div class="res">
+                <div class="top">
+                    <h1>Recomended Movies</h1>
+                </div>
+                <div class="container">
+                    {% for i in range(0,5) %}
+                    <div class="pic" data-tilt data-tilt-reverse = "true">
+                        <img src="{{images[i]}}" alt="image: {{res[i]}}">
+                        <p class="names">{{ res[i] }}</p>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+    </div>
+    <script src="static/movie.js"></script>
+    <script src="static/tilt.js"></script>
+</body>
+
+</html>

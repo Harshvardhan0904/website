@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Arbutus&family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Fontdiner+Swanky&family=Girassol&family=Give+You+Glory&family=Goldman:wght@400;700&family=Leckerli+One&family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Vinyl&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Uncial+Antiqua&family=Zen+Dots&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for consistent spacing */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #3a3a3a;
+ /* Default background color for uniformity */
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Smaller font on smaller devices */
+    }
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    padding: 20px 5%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav{
+    background-color: rgb(73, 73, 73);
+    width: 100%;
+    padding: 1vw 1vw;
+    height: 4vw;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ nav .logo h1 a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+ }
+ nav .logo{
+    font-family:"Fontdiner Swanky" ;
+    margin-left: 2vw;
+ }
+ .nav2 ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 4vw;
+    margin-right: 2vw;
+ }
+
+ .nav2 ul li{
+    list-style: none;
+ }
+
+.nav2 ul li a{
+    padding: .3vw;
+    border-radius: 100px;
+    text-decoration: none;
+    text-wrap-style: none;
+    list-style: none;
+    font-family: Poppins;
+    font-weight: 200;
+    font-size: 0.9vw;
+    border: 1px solid rgb(148, 148, 148);
+    background-color: rgb(123, 123, 123);
+    color: rgb(255, 255, 255);
+    transition: 0.3s all ease;
+    text-wrap-style: none;
+}
+.nav2 ul li a:hover{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+    .nav2 ul {
+        flex-direction: column;
+        gap: 2vw;
+        margin-right: 0;
+    }
+    .nav2 ul li a {
+        font-size: 1.2vw; /* Adjust font size for better visibility */
+    }
+}
+.sidebar h1{
+    margin-top: 20px;
+    letter-spacing: 1px;
+    font-family: Bebas Neue;
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+    text-align: center;
+    margin-right: 70px;
+    border-bottom: 2px solid goldenrod;
+   
+  }
+/* Sidebar Styling */
+.sidebar {
+    font-family: 'Poppins';
+    font-weight: 200;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 0;
+    position: fixed;
+    top: 0; /* Aligns sidebar to the top of the viewport */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.786);
+    backdrop-filter: blur(5px);
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 1100; /* Sidebar should appear above the navbar */
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    padding: 1vw 1vw;
+    font-size: 1.2vw;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    margin: 15px;
+  }
+  
+  .sidebar a:hover {
+    background-color: #ffffff36;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    border-radius: 10px;
+  }
+
+  .sidebar .closebtn {
+    color: black; /* Rotate only the icon */
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 36px;
+    border-radius: 5px;
+    background-color: #ffffff; /* Example background for better visibility */
+    left: 83%;
+    margin-top: 30px;
+  }
+  
+  .sidebar .closebtn .icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Smooth rotation */
+  }
+  
+  .sidebar .closebtn:hover .icon {
+    transform: rotate(180deg);
+    
+    
+  }
+
+/* Section Styling */
+.s {
+    display: flex;
+    background-image: url("images/feild2.jpg");
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    padding: 100px;
+    
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 100vh;
+}
+.s h2 {
+    font-size: 3em;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: Bebas Neue;
+    
+    font-size: 5vw;
+    color: black;
+    text-shadow: 12px 0px 30px rgb(201, 201, 201);
+    border-radius: 15px;
+    margin-bottom: 10px;
+    
+}
+
+form {
+    width: 100%;
+    z-index: 1;
+    background-color: #242424ca;
+    padding: 50px;
+    border-radius: 20px;
+    gap: 10px;
+    z-index: 10;
+    box-shadow: 5px 5px 40px 7px rgba(0, 0, 0, 0.447);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.c2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c2 span {
+    font-weight: bold;
+    font-family: 'Bebas Neue';
+    margin-bottom: 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 2vw;
+    letter-spacing: 1px;
+}
+
+.c2 input {
+    cursor: pointer;
+    width: 70%;
+    height: 10vh;
+    padding: 10px;
+    border: 0.1vw solid #ffffff8f;
+    border-radius: 14px;
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: 100;
+    font-family: 'Montserrat', Courier, monospace;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.c2 input:focus {
+    outline: none;
+    box-shadow: 0 0 40px 5px rgb(88, 88, 88);
+}
+
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    font-family: 'Montserrat';
+    background-color: black;
+    color: white;
+    width: 10%;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: 5%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px rgba(138, 221, 246, 0.5);
+}
+
+.res , .error{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(27, 27, 27);
+    width: fit-content;
+    color: rgb(43, 255, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    margin-left: 25%;
+    border-radius: 10px;
+    padding: 1vw;
+    margin-top: 1vw;
+    
+}

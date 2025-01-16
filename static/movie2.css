@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Arbutus&family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Fontdiner+Swanky&family=Girassol&family=Give+You+Glory&family=Goldman:wght@400;700&family=Leckerli+One&family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Vinyl&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Uncial+Antiqua&family=Zen+Dots&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+.sidebar {
+    font-family: 'Poppins';
+    font-weight: 200;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 0;
+    position: fixed;
+    top: 0; /* Aligns sidebar to the top of the viewport */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.786);
+    backdrop-filter: blur(5px);
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 1100; /* Sidebar should appear above the navbar */
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    padding: 1vw 1vw;
+    font-size: 1.2vw;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    margin: 15px;
+  }
+  
+  .sidebar a:hover {
+    background-color: #ffffff36;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    border-radius: 10px;
+  }
+
+  .sidebar .closebtn {
+    color: black; /* Rotate only the icon */
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 36px;
+    border-radius: 5px;
+    background-color: #ffffff; /* Example background for better visibility */
+    left: 83%;
+    margin-top: 30px;
+  }
+  
+  .sidebar .closebtn .icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Smooth rotation */
+  }
+  
+  .sidebar .closebtn:hover .icon {
+    transform: rotate(180deg);
+    
+    
+  }
+  .sidebar h1{
+    margin-top: 20px;
+    letter-spacing: 1px;
+    font-family: Bebas Neue;
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+    text-align: center;
+    margin-right: 70px;
+    border-bottom: 2px solid goldenrod;
+   
+  }
+#page1{
+    height: 100vh;
+    width: 100%;
+
+}
+ nav{
+    width: 100%;
+    padding: 1vw 1vw;
+    height: 4vw;
+    display: flex;
+   
+    justify-content: space-between;
+ }
+
+ nav .logo h1 a{
+    text-decoration: none;
+    color: black;
+ }
+ nav .logo{
+    font-family:"Fontdiner Swanky" ;
+    margin-left: 2vw;
+ }
+ .nav2 ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 4vw;
+    margin-right: 2vw;
+ }
+
+ .nav2 ul li{
+    list-style: none;
+ }
+
+.nav2 ul li a{
+    padding: .3vw;
+    border-radius: 100px;
+    text-decoration: none;
+    text-wrap-style: none;
+    list-style: none;
+    font-family: Poppins;
+    font-weight: 200;
+    font-size: 0.9vw;
+    border: 1px solid rgba(0, 0, 0, 0.349);
+    background-color: #fff;
+    color: black;
+    transition: 0.3s all ease;
+    text-wrap-style: none;
+}
+.nav2 ul li a:hover{
+    background: black;
+    color: white;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+    .nav2 ul {
+        flex-direction: column;
+        gap: 2vw;
+        margin-right: 0;
+    }
+    .nav2 ul li a {
+        font-size: 1.2vw; /* Adjust font size for better visibility */
+    }
+}
+
+
+.page1-top {
+    justify-content: space-between;
+    display: flex;
+    height: fit-content;
+    width: 100%;
+}
+
+.page1-top .heading{
+    border-bottom: 2px solid black;
+    height: 50%;
+    margin-top: 1vw;
+    padding: 1vw 2vw;
+    text-align: left;
+    line-height: 8vw;
+    margin-left: 3vw;
+    letter-spacing: -5px;
+    font-family: 'Bebas Neue';
+    font-size: 5vw;
+}
+
+.page1-top .context{
+    background-color: white;
+    margin-top: 5vw;
+    margin-right: 2vw;
+    padding: 2vw 2vw;
+    width: 30%;
+    font-size: 1.5vw;
+    font-family: Poppins;
+    font-weight: 200;
+    text-align: center;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+.page1-main{
+    padding: 2vw 3vw;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+}
+
+form{
+    width: 40%;
+    height: 100%;
+}
+
+.input{
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),url("images/movie.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.361);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.input label{
+    color: white;
+    margin-bottom: 1vw;
+    font-size: 3vw;
+    font-family: "Bebas Neue";
+}
+.input input{
+    text-align: center;
+    width: 40%;
+    height: 3vw;
+    font-size: 1vw;
+    border: none;
+    border-radius: 5px;
+    font-family: Poppins;
+    font-weight: 300;
+    transition: all .3s ease;
+    outline: none;
+}
+input:focus{
+    box-shadow: 0px 0px 30px white;
+}
+.res{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.res .container{
+    padding: 1vw 1vw;
+    gap: 20px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid white;
+    width: 100%;
+    height: 50%;
+}
+.res .container div{
+    width: 25%;
+}
+
+.res .top{
+    margin: 3vw;
+    font-family: "Bebas Neue";
+    font-size: 2vw;
+    border-bottom: 2px solid goldenrod;
+    justify-content: center;
+    text-align: center;
+}
+
+.input button{
+    margin-top:2vw;
+    padding: 0.5vw 0vw;
+    width: 15%;
+    background-color: rgb(29, 29, 29);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: Poppins;
+    transition: 0.2s all ease;
+}
+
+.input button:hover{
+    box-shadow: 0px 0px 10px #ffbb003b;
+    transition: 0.2s all ease;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+select{
+    width: 100%;
+    height: 36px;
+    appearance: none;
+    border:none;
+    font-family: 'Poppins';
+    text-align: center;
+    padding: 0 12px;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+
+}
+select option{
+    font-family: Montserrat;
+    
+}
+
+select:focus{
+    box-shadow: 0 0 10px rgba(51, 52, 51, 0.864);
+}
+
+.select-box::after{
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    right: 15px;
+    top: 35%;
+    transform: rotate(-45deg);
+
+}
+.container .pic{
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.43);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1vw 1vw;;
+    font-family: "Bebas Neue";
+    letter-spacing: 0.6px;
+}
+
+.container .pic img{
+    width: 100%;
+    transition: 0.2s all ease;
+    height: 100%;
+}
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/disease.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/disease.css">
+  <title>Disease Recommendation</title>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <a href="/" class="logo">Predict.io</a>
+    <nav class="navbar">
+      <a href="/">Home</a>
+      <a href="javascript:void(0);" id="servicesLink">Services</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#about">About</a> <!-- Link to the About section -->
+    </nav>
+  </header>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <h1 class="Projects">Projects</h1>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/crop">1.Crop Yeild Detection</a>
+    <a href="#" class="active">2. AI DOC</a>
+    <a href="/movie">3. Movie Recommendation</a>
+    
+  </div>
+
+  <section class="s">
+    <h2 class="heading"> YOUR AI DOC</h2>
+    <form onsubmit="return valid();" action="/disease" method="POST" id="disease_form">
+      <div class="container">
+        <div class="c2">
+          <span>YOUR ISSUE : </span>
+          <input type="text" placeholder=" Enter Symptomps like : cough , heavy breathing " name="symp" , list="SymptompOP">
+          <datalist id="SymptompOP"></datalist>
+        </div>
+
+      </div>
+      <div class="button">
+        <button type="submit" class="submit" id="submit">Predict</button>
+      </div>
+      {% if error %}
+      <div class="error" style="color: red;">{{ error }} </div>
+      {% endif %}
+
+      {% if pred_disease %}
+      <h1 class="restxt">You might have : <span style="color: gold; font-weight: bold;">{{ pred_disease }}</span></h1>
+      {% else %}
+      <h1 class="restxt">NOT A VALID SYMPTOM</h1>
+      {% endif %}
+    </form>
+    {% if pred_disease %}
+      <h1 class="restxt">SCROLL DOWN </h1>
+      <div class="animation">
+        <span></span>
+        <span></span>
+      </div>
+      {% endif %}
+    
+  </section>
+  <div class="resbox"  >
+    
+    {% if pred_disease %}
+    <div class="desc" id="desc">
+        <h3>Description</h3>
+        <div>
+            <p>{{ desc }}</p>
+        </div>
+    </div>
+    
+    <div class="pre" >
+        <h3>Precautions:</h3>
+        <div>
+            <ul>
+                {% for precaution_item in precaution %}
+                    <li>{{ precaution_item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="diet">
+        <h3>Diet:</h3>
+        <div>
+            <ul>
+                {% for workout_item in workout %}
+                    <li>{{ workout_item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="med">
+        <h3>Medication:</h3>
+        <div>
+            <ul>
+                {% for medicine in med %}
+                    <li>{{ medicine }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+</div>
+  <div class="box2">
+
+  </div>
+  <script src="static/disease.js"></script>
+</body>
+
+
+</html>

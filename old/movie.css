@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Dancing+Script:wght@400..700&family=Give+You+Glory&family=Leckerli+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Vinyl&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
+    background-image: url("images/Fondo de tela negra con espacio de copia _ Foto Premium.jpg"); /* Adjusted path */
+    background-size:cover; /* Fill the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    max-height: 100vh; /* Ensure full height */
+    z-index: 1;
+    background-color: black;
+    
+    
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; 
+    }
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    padding: 0 5%;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.logo {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo:hover {
+    font-size: 30px;
+    color: #000;
+    background-color: #fff;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #000;
+    background-color: rgb(47, 234, 255);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.589);
+    backdrop-filter: blur(10px);
+    overflow-x: hidden;
+    transition: width 0.5s ease;
+    backdrop-filter: blur(10px);
+    padding-top: 80px;
+    z-index: 1;
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    font-size: 18px;
+    color: #ffffff;
+    margin: 5px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: rgb(47, 234, 255);
+    color: #000;
+    border-radius: 5px;
+}
+
+.sidebar .active {
+    background-color: rgb(47, 234, 255);
+    color: #000;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.sidebar h1 {
+    color: #ffffff;
+    margin-left: 20px;
+}
+.s {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    width: 100%;
+    min-height: 70vh;
+    overflow: hidden;
+}
+
+.s h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 5px 15px rgba(255, 255, 255, 0.508);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Form Styling */
+form {
+    
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(1px);
+    max-width: 600px;
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.605);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 31px 2px rgb(113, 113, 113);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.c2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c2 span {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-family: Poppins;
+    margin-bottom: 40px;
+    
+}
+
+.c2 input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 14px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-size: 0.8rem;
+    text-align: center;
+    font-family: 'Montserrat';
+
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.c2 input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(43, 255, 0, 0.864);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.submit {
+    background-color: #000;
+    color: #ffffff;
+    padding: 10px 30px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit:hover {
+    background-color: #00d9ff;
+    color: #000;
+    transform: scale(1.1);
+   
+    box-shadow: 0 0 20px rgba(0, 68, 255, 0.552);
+}
+
+.select-box{
+    position: relative;
+    width: 50%;
+}
+select{
+    width: 100%;
+    height: 36px;
+    appearance: none;
+    padding: 0 12px;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+
+}
+select option{
+    font-family: Montserrat;
+    
+}
+
+select:focus{
+    box-shadow: 0 0 10px rgba(43, 255, 0, 0.864);
+}
+
+.select-box::after{
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    right: 15px;
+    top: 35%;
+    transform: rotate(-45deg);
+
+}
+
+.picbox div{
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(0, 0, 0);
+}
+
+.picbox{
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    flex-direction: column;
+    top: -20%;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+}
+.pictures {
+    perspective: 1000px;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+    
+    
+}
+
+.pictures .pic {
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+    width: 300px;
+    color: white;
+    text-align: center;
+    
+   
+    
+}
+
+.pictures .pic:hover {
+    filter: brightness(1);
+    transform: translateZ(100px);
+}
+
+.pictures .pic:hover + .pic {
+    filter: brightness(0.4);
+    transform: translateZ(20px)   rotateY(15deg);
+}
+
+.pictures .pic:hover + .pic + .pic {
+    filter: brightness(0.2);
+    transform: translateZ(10px) rotateY(5deg);
+}
+
+.pic img{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
